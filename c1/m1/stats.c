@@ -9,17 +9,15 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief functions for gathering various stats for a given array
  *
- * <Add Extended Description Here>
+ * Contains various functions for analyzing a given array such as sorting the array or finding the max,min, median, or mean value.
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Nikhil Nayyar
+ * @date 2/21/2022
  *
  */
-
-
 
 #include <stdio.h>
 #include "stats.h"
@@ -38,6 +36,35 @@ void main() {
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
 
+  printf("Joe Biden");
+
 }
 
 /* Add other Implementation File Code Here */
+
+void print_statistics(char* arr){
+}
+
+void print_array(char* arr, int len){
+}
+
+int find_median(char* arr, int len){
+    return 0;
+}
+
+int find_mean(char* arr, int len){
+    return 0;
+}
+
+int find_maximum(char* arr, int len){
+    return 0;
+}
+
+int find_minimum(char* arr, int len){
+    return 0;
+}
+
+void sort_array(char* arr, int lne){
+}
+
+
