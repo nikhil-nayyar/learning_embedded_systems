@@ -22,6 +22,6 @@ SOURCES_HOST = main.c \
 # Add your include paths to this variable
 INCLUDES_MSP432 = -I ../include/common \
 	   -I ../include/CMSIS \
-	   -I ../include/msp432
+	   -I ../include/msp432 \
 
-INCLUDES_HOST = -I ../include/common
+INCLUDES_HOST = -I ../include/common \

@@ -33,71 +33,94 @@ include sources.mk
 # Platform Override
 PLATFORM = HOST 
 
-# Architectures Specific Flags
-LINKER_FILE = ../msp432p401r.lds 
-CPU = cortex-m0plus 
-ARCH = thumb
-SPECS = nosys.specs
+#------------------------------------------------------------------------------
 
 # Compiler Flags and Defines
 
 ## General Flags
 TARGET = c1m2
+GENERAL = -Wall -Werror -g -O0 -std=c99
+
+# Architectures Specific Flags (for use with MSP432)
+LINKER_FILE = ../msp432p401r.lds 
+CPU = cortex-m4
+FPU=fpv4-sp-d16
+FLOAT=hard
+ARCH = armv7e-m
+SPECS = nosys.specs
+ARCHFLAGS = -mcpu=$(CPU) -mfpu=$(FPU) -mfloat-abi=$(FLOAT) \
+	   -march=$(ARCH) -mthumb --specs=$(SPECS)
+
+ifeq ($(PLATFORM), HOST)
+SOURCES = SOURCES_HOST
+else
+SOURCES = SOURCES_MSP432
+endif
 
 ## Host Specific Flags
 ifeq ($(PLATFORM), HOST)
-CC = gcc
-LD = ld 
-LDFLAGS = -Wl -Map=$(TARGET).map  
-CFLAGS = -Wall $(INCLUDES_HOST) 
-CPPFLAGS = -D $(PLATFORM) 
+CC=gcc
+else
+CC=arm-none-eabi-gcc
 endif
 
-## MSP432 Specific Flags
-ifeq ($(PLATFORM),MSP432)
-CC = arm-none-eabi-gcc
-LD = ld
-LDFLAGS = -Wl -Map=$(TARGET).map -T$(LINKER_FILE) 
-CFLAGS = -Wall $(INCLUDES_MSP432) -mcpu=$(CPU) -m$(ARCH) --specs$(SPECS) 
-CPPFLAGS = -D $(PLATFORM)
-endif
-
-
-# 
 ifeq ($(PLATFORM), HOST)
-main.o: main.c 
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-
-memory.o: memory.c 
-	$(CC)  $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-
-startup_msp432p401r.o: startup_msp432p401r.c  
-	$(CC)  $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-
-system_msp432p401r.o: system_msp432p401r.c 
-	$(CC)  $(CPPFLAGS) $(CFLAGS)  -c $< -o $@
-
-interrupts_msp432p401r.o: interrupts_msp432p401r.c 
-	$(CC)  $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-
+LD=ld
+else
+LD=ld
 endif
 
-#
-ifeq ($(PLATFORM), MSP432)
-main.o: main.c 
-	$(CC)  $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-
-memory.o: memory.c 
-	$(CC)  $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-
-startup_msp432p401r.o: startup_msp432p401r.c  
-	$(CC)  $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-
-system_msp432p401r.o: system_msp432p401r.c 
-	$(CC)  $(CPPFLAGS) $(CFLAGS)  -c $< -o $@
-
-interrupts_msp432p401r.o: interrupts_msp432p401r.c 
-	$(CC)  $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-
+ifeq ($(PLATFORM), HOST)
+LDFLAGS= -Wl,-Map=../bin/$(TARGET).map -Wl,-o,../bin/$(TARGET).out,-lc 
+else
+LDFLAGS= -Wl,-Map,../bin/$(TARGET).map -Wl,-T,$(LINKER_FILE) -Wl,-o,../bin/$(TARGET).out
 endif
 
+
+ifeq ($(PLATFORM), HOST)
+CFLAGS= $(GENERAL) $(INCLUDES_HOST) 
+else
+CFLAGS= $(GENERAL) $(INCLUDES_MSP432) $(ARCHFLAGS)
+endif
+
+
+ifeq ($(PLATFORM), HOST)
+CPPFLAGS= -DHOST
+else
+CPPFLAGS= -DMSP432 
+endif
+
+#------------------------------------------------------------------------------
+
+# Make Build Rules
+
+OBJS = $(SOURCES_HOST:.c=.o)
+OBJSPATH = $(addprefix ../bin/, $(OBJS))
+
+%.o: %.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -M $< > ../bin/$<.dep
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -c $< -o ../bin/$@
+
+%.i: %.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -E $< -o ../pp/$@
+
+%.asm: %.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -S $< -o ../asm/$@
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -c $< -o ../bin/$@
+	objdump -D ../bin/$(@:.o=.asm) > ../asm/$@.obj
+
+.PHONY: build
+build: all
+
+.PHONY: all
+all: compile-all
+	$(CC) $(OBJSPATH) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -o ../bin/$(TARGET).out 
+
+.PHONY: compile-all
+compile-all: $(OBJS)
+
+.PHONY: clean
+clean:
+	rm -f ../asm/*
+	rm -f ../bin/*
+	rm -f ../pp/*
