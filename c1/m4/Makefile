@@ -38,7 +38,7 @@ PLATFORM = HOST
 # Compiler Flags and Defines
 
 ## General Flags
-TARGET = c1m2
+TARGET = c1m4
 GENERAL = -Wall -Werror -g -O0 -std=c99
 
 # Architectures Specific Flags (for use with MSP432)
@@ -62,12 +62,6 @@ ifeq ($(PLATFORM), HOST)
 CC=gcc
 else
 CC=arm-none-eabi-gcc
-endif
-
-ifeq ($(PLATFORM), HOST)
-LD=ld
-else
-LD=ld
 endif
 
 ifeq ($(PLATFORM), HOST)
