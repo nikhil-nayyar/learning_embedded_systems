@@ -6,23 +6,26 @@ The breakdown of the modules are as follows.
 
 ## Course
 ### Course 1
-__Module 1__
+####Module 1
  (Re)Introduction to C and C compilation with GCC
 __Module 2__
+####Module 2
  Introduction to Make and Makefiles
 __Module 3__ 
-TBD
+####Module 3
+Introduction to Memory, Segments, and Management
 __Module 4__ 
-TBD
+####Module 4
+Final Project
 
 ### Course 2
-__Module 1__ 
+####Module 1
 TBD
-__Module 2__ 
+####Module 2
 TBD 
-__Module 3__ 
+####Module 3
 TBD
-__Module 4__ 
+####Module 4
 TBD
 
 
