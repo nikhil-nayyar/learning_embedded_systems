@@ -29,7 +29,7 @@
  *
  * @param arr character array for which to calculate stats
  */
-void print_statistics(char* arr);
+void print_statistics(unsigned char* arr);
 
 /**
  * @brief prints character array
@@ -39,7 +39,7 @@ void print_statistics(char* arr);
  * @param arr character array for which to print each element
  * @param len number of elements in arr
  */
-void print_array(char* arr, int len);
+void print_array(unsigned char* arr, int len);
 
 /**
  * @brief return median character for a given array
@@ -51,7 +51,7 @@ void print_array(char* arr, int len);
  *
  * @return median character that appears in middle of sorted array
  */
-int find_median(char* arr, int len);
+int find_median(unsigned char* arr, int len);
 
 /**
  * @brief return character that represents average of all values in array
@@ -61,7 +61,7 @@ int find_median(char* arr, int len);
  *
  * @return mean character that represents average of all values in array
  */
-int find_mean(char* arr, int len);
+int find_mean(unsigned char* arr, int len);
 
 /**
  * @brief returns maximum value in an array
@@ -73,7 +73,7 @@ int find_mean(char* arr, int len);
  *
  * @return max character that is the maximum value
  */
-int find_maximum(char* arr, int len);
+int find_maximum(unsigned char* arr, int len);
 
 
 /**
@@ -85,7 +85,7 @@ int find_maximum(char* arr, int len);
  * @param len number of elements in arr
  *
  * @return min character that is the minimum value
- */int find_minimum(char* arr, int len);
+ */int find_minimum(unsigned char* arr, int len);
 
 /**
  * @brief sort the inputted character array from largest to smallest
@@ -96,6 +96,6 @@ int find_maximum(char* arr, int len);
  * @param len number of elements in arr
  *
  */
-void sort_array(char* arr, int len);
+void sort_array(unsigned char* arr, int len);
 
 #endif /* __STATS_H__ */
