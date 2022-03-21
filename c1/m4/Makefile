@@ -65,9 +65,9 @@ CC=arm-none-eabi-gcc
 endif
 
 ifeq ($(PLATFORM), HOST)
-LDFLAGS= -Wl,-Map=../bin/$(TARGET).map -Wl,-o,../bin/$(TARGET).out,-lc 
+LDFLAGS= -Wl,-Map=bin/$(TARGET).map -Wl,-o,bin/$(TARGET).out,-lc 
 else
-LDFLAGS= -Wl,-Map,../bin/$(TARGET).map -Wl,-T,$(LINKER_FILE) -Wl,-o,../bin/$(TARGET).out
+LDFLAGS= -Wl,-Map,bin/$(TARGET).map -Wl,-T,$(LINKER_FILE) -Wl,-o,bin/$(TARGET).out
 endif
 
 
@@ -79,9 +79,9 @@ endif
 
 
 ifeq ($(PLATFORM), HOST)
-CPPFLAGS= -DHOST
+CPPFLAGS= -DHOST -DCOURSE1 -DVERBOSE
 else
-CPPFLAGS= -DMSP432 
+CPPFLAGS= -DMSP432 -DCOURSE1 -DVERBOSE
 endif
 
 #------------------------------------------------------------------------------
@@ -89,32 +89,32 @@ endif
 # Make Build Rules
 
 OBJS = $(SOURCES_HOST:.c=.o)
-OBJSPATH = $(addprefix ../bin/, $(OBJS))
+OBJSPATH = $(addprefix bin/, $(OBJS))
 
-%.o: %.c
-	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -M $< > ../bin/$<.dep
-	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -c $< -o ../bin/$@
+%.o: src/%.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -c $< -o bin/$@
 
-%.i: %.c
-	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -E $< -o ../pp/$@
+%.i: src/%.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -E $< -o pp/$@
 
-%.asm: %.c
-	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -S $< -o ../asm/$@
-	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -c $< -o ../bin/$@
-	objdump -D ../bin/$(@:.o=.asm) > ../asm/$@.obj
+%.asm:src/%.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -S $< -o asm/$@
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -c $< -o bin/$@
+	objdump -D ../bin/$(@:.o=.asm) > asm/$@.obj
 
 .PHONY: build
 build: all
 
 .PHONY: all
 all: compile-all
-	$(CC) $(OBJSPATH) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -o ../bin/$(TARGET).out 
+	$(CC) $(OBJSPATH) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -o bin/$(TARGET).out 
 
 .PHONY: compile-all
 compile-all: $(OBJS)
 
 .PHONY: clean
 clean:
-	rm -f ../asm/*
-	rm -f ../bin/*
-	rm -f ../pp/*
+	rm -f asm/*
+	rm -f bin/*
+	rm -f pp/*
+	rm -f src/*.o

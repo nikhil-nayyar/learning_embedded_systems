@@ -20,7 +20,9 @@
  * @date April 1 2017
  *
  */
+
 #include "memory.h"
+#include <stdlib.h>
 
 /***********************************************************
  Function Definitions
@@ -46,5 +48,119 @@ void set_all(char * ptr, char value, unsigned int size){
 
 void clear_all(char * ptr, unsigned int size){
   set_all(ptr, 0, size);
+}
+
+uint8_t* my_memmove(uint8_t* src, uint8_t* dst, size_t length){
+
+	uint8_t* currentS = src;
+	uint8_t* currentD = dst;
+
+  for(int i = 0; i < length; i++){
+		*currentD = *currentS;
+    *currentS = 0;
+    currentS++;
+		currentD++;
+	}
+
+	return dst;
+
+}
+
+uint8_t* my_memcopy(uint8_t* src, uint8_t* dst, size_t length){
+
+	uint8_t* currentS = src;
+	uint8_t* currentD = dst;
+
+  for(int i = 0; i < length; i++){
+		*currentD = *currentS;
+    currentS++;
+		currentD++;
+	}
+
+	return dst;
+
+}
+
+uint8_t* my_memset(uint8_t* src, size_t length, uint8_t value){
+
+	uint8_t* current = src;
+
+	for(int i = 0; i < length; i++){
+		*current = value;
+		current++;
+	}
+
+	return src;
+
+}
+
+
+uint8_t* my_memzero(uint8_t* src, size_t length){
+
+	uint8_t* result = my_memset(src,length,0);
+	
+	return result;
+
+}
+
+
+uint8_t* my_reverse(uint8_t* src, size_t length){
+
+	size_t length_half = length / 2;
+
+	uint8_t* stack = malloc(length_half);
+
+	uint8_t* front = src; 
+  uint8_t* back = src + length;
+
+	// Operate on first half of data
+	for(int i = 0; i < length_half; i++){
+	
+		//Place value at front ptr on stack
+		*stack = *front;
+
+		// Place value at back ptr on front ptr
+		*front = *back;
+
+		// Increment front ptr
+		front++;
+
+		// Decrement back ptr
+		back--;
+
+		// Increment Stack ptr
+		stack++;
+
+	}
+
+	// Operate on second half of data
+	for(int i = 0; i < length_half; i++){
+
+		//Place value from stack on front pointer
+		*front = *stack;
+
+		// Decrement stack
+		stack--;
+
+		// Increment front
+		front++;		
+	}
+
+	return src;
+
+}
+
+uint32_t* reserve_words(size_t length){
+
+	uint32_t* result = malloc(length*4);
+
+	return result;
+
+}
+
+void free_words(uint32_t* src){
+
+	free(src);
+
 }
 

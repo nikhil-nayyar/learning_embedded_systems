@@ -15,7 +15,7 @@
  * Contains various functions for analyzing a given array such as sorting the array or finding the max,min, median, or mean value.
  *
  * @author Nikhil Nayyar
- * @date 2/21/2022
+ * @date 3/15/22
  *
  */
 
@@ -29,26 +29,9 @@ int cmpfunc(const void *a, const void *b);
 /* Size of the Data Set */
 #define SIZE (40)
 
-void main() {
-
-  unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
-                              114, 88,   45,  76, 123,  87,  25,  23,
-                              200, 122, 150, 90,   92,  87, 177, 244,
-                              201,   6,  12,  60,   8,   2,   5,  67,
-                                7,  87, 250, 230,  99,   3, 100,  90};
-
-  print_array(test, SIZE);
-
-  // Must sort array to ensure functions work properly
-  sort_array(test, SIZE);
-
-  print_statistics(test);
-
-}
-
 /* Add other Implementation File Code Here */
 
-void print_statistics(char* arr){
+void print_statistics(unsigned char * arr){
 
    printf("Mean   : %hhu\n", find_mean(arr,SIZE));
    printf("Median : %hhu\n", find_median(arr,SIZE));
@@ -57,13 +40,13 @@ void print_statistics(char* arr){
 
 }
 
-void print_array(char* arr, int len){
+void print_array(unsigned char* arr, int len){
    for(int i = 0; i < len; i++){
       printf("%hhu ",arr[i]);
    } printf("\n");
 }
 
-int find_median(char* arr, int len){
+int find_median(unsigned char* arr, int len){
 
      // Calculates index at middle of array
      int m = len / 2;
@@ -72,7 +55,7 @@ int find_median(char* arr, int len){
      return arr[m];
 }
 
-int find_mean(char* arr, int len){
+int find_mean(unsigned char* arr, int len){
     
     int m = 0;
     
@@ -87,17 +70,17 @@ int find_mean(char* arr, int len){
     return m;
 }
 
-int find_maximum(char* arr, int len){
+int find_maximum(unsigned char* arr, int len){
     // returns value at greatest end of array
     return arr[0];
 }
 
-int find_minimum(char* arr, int len){
+int find_minimum(unsigned char* arr, int len){
     // retruns value at smallest end of array
     return arr[len-1];
 }
 
-void sort_array(char* arr, int len){
+void sort_array(unsigned char* arr, int len){
    // makes call to std library quicksort function
    qsort(arr,len,1,cmpfunc);
 }

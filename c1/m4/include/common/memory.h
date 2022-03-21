@@ -22,6 +22,9 @@
 #ifndef __MEMORY_H__
 #define __MEMORY_H__
 
+#include <stddef.h>
+#include <stdint.h>
+
 /**
  * @brief Sets a value of a data array 
  *
@@ -166,7 +169,7 @@ uint8_t* my_reverse(uint8_t* src, size_t length);
  *
  * @return void.
  */
-int32_t* reserve_words(size_t length);
+uint32_t* reserve_words(size_t length);
 
 /**
  * @brief free a dynamic allocation by providing source
@@ -177,6 +180,6 @@ int32_t* reserve_words(size_t length);
  *
  * @return void.
  */
-void free_words(int32_t* src);
+void free_words(uint32_t* src);
 
 #endif /* __MEMORY_H__ */

@@ -19,7 +19,10 @@
 #ifndef __COURSE1_H__
 #define __COURSE1_H__
 
-#include <stdint.h>
+#include<stdint.h>
+
+#define BASE_10 (10)
+#define BASE_16 (16)
 
 #define DATA_SET_SIZE_W (10)
 #define MEM_SET_SIZE_B  (32)
