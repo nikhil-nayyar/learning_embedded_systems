@@ -23,63 +23,93 @@
 
 #include "data.h"
 #include "memory.h"
-#include <math.h>
+#include <stdio.h>
 
 uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base){
 
-  int max_power;
-  int q;
-  int r;
+	uint8_t* curr =  ptr;
+	uint8_t size = 0;
 
-  // Get highest power of number
-  int i = 1;
-  do{
-
-    q = data / my_pow(base,i);
-    max_power = i;
-    i++;
-
-  } while(q != 0);
-
-  // Set up values for conversion
-  max_power--;
-  int value = data;
   int ascii_zero = 48;
-  uint8_t* curr = ptr;
-  
+	int ascii_a = 65;
+
+	uint16_t q;
+	uint16_t r;
+
+	uint32_t value;	
+	if(data >> 31){
+		value = -1 * data;
+	} else{
+	  value = data;
+  }
+
 
   // Perform conversion
   do{
   
-    q = value / my_pow(base,max_power);
-    r =  value % my_pow(base,max_power);
+    q =  value / base;
+    r =  value % base;
     
-    my_memset(curr, 1, ascii_zero + q);
-    value = r;
-    max_power--;
+		uint8_t digit;
+
+    if(r < 10){
+			digit = ascii_zero + r;
+		} else{
+			digit = ascii_a + (r-10);
+		}
+
+		my_memset(curr, 1, digit);
+    value = q;
     curr++;
-    
-  } while(max_power > -1);
-  
-  return max_power;
+    size++; 
+  } while(q != 0);
+
+	//my_reverse(ptr,size);	
+	if(data >> 31){
+		my_memset(curr,1,45);
+		curr=curr+1;
+		size++;
+	}
+
+	my_reverse(ptr,size);	
+
+	*curr=0;
+
+return size;
 } 
 
 
 
 int32_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base){
 
+	
   uint8_t* curr = ptr;
-
 	uint8_t temp;
   uint8_t* temp_digit = &temp; 
-  int32_t result;
+  int32_t result=0;
 
-  int ascii_zero = 48;
-  for(int i = digits-1; i > 0; i--){
-    my_memcopy(curr, temp_digit, 1);
-    result = result + ((*temp_digit - ascii_zero) * my_pow(base,i));
-    curr++;
-  }
+	uint8_t pow = 0;
+  for(int i = digits-1; i >= 0; i--){
+    
+		// Get rightmost (LS) digit
+		my_memcopy(curr+i, temp_digit, 1);
+
+		// If the current digit is '-', negate value and return
+		if(*(curr+i)==45){ result = result*-1;}
+		
+		// Add value of digit to total result if integer
+		if(*(curr+i) >= 48 && *(curr+1) <= 57){
+			result = result +((*temp_digit - 48) * my_pow(base,pow));
+		}
+		
+		// Add value of digit to total result if letter
+		if(*(curr+i) >= 65 && *(curr+1) <= 70){
+			result = result +((*temp_digit - 65) * my_pow(base,pow));
+		}
+
+		pow++;
+
+	}
 
   return result;
 

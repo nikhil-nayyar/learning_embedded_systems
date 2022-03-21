@@ -53,14 +53,26 @@ void clear_all(char * ptr, unsigned int size){
 uint8_t* my_memmove(uint8_t* src, uint8_t* dst, size_t length){
 
 	uint8_t* currentS = src;
+	uint8_t* T = malloc(length);
+	uint8_t* currentT = T;
 	uint8_t* currentD = dst;
 
+	for(int i = 0; i < length; i++){
+		*currentT = *currentS;
+		*currentS = 0;
+		currentS++;
+		currentT++;
+	}
+
+	currentT = T;
+
   for(int i = 0; i < length; i++){
-		*currentD = *currentS;
-    *currentS = 0;
-    currentS++;
+		*currentD = *currentT;
+    currentT++;
 		currentD++;
 	}
+
+	free(T);
 
 	return dst;
 
@@ -105,13 +117,19 @@ uint8_t* my_memzero(uint8_t* src, size_t length){
 
 
 uint8_t* my_reverse(uint8_t* src, size_t length){
-
+/*
 	size_t length_half = length / 2;
 
-	uint8_t* stack = malloc(length_half);
+	uint8_t* stack;
+	
+	if(length % 2){
+		stack = malloc(length_half+1);
+	} else{
+		stack = malloc(length_half);
+	}
 
 	uint8_t* front = src; 
-  uint8_t* back = src + length;
+  uint8_t* back = src + length-1;
 
 	// Operate on first half of data
 	for(int i = 0; i < length_half; i++){
@@ -133,6 +151,9 @@ uint8_t* my_reverse(uint8_t* src, size_t length){
 
 	}
 
+	// Decrement stack pointer to most recently add value
+	stack--;
+
 	// Operate on second half of data
 	for(int i = 0; i < length_half; i++){
 
@@ -144,6 +165,16 @@ uint8_t* my_reverse(uint8_t* src, size_t length){
 
 		// Increment front
 		front++;		
+	}
+	*/
+
+	uint8_t* temp = malloc(length);
+
+	for(int i = 0; i < length; i++){
+		*(temp+(length-1-i)) = *(src+i);
+	}
+	for(int i = 0; i < length; i++){
+		*(src+i) = *(temp+i);
 	}
 
 	return src;

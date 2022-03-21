@@ -35,19 +35,22 @@ int8_t test_data1() {
 
   if (! ptr )
   {
-    return TEST_ERROR;
+  	PRINTF("ERROR 1\n");
+	  return TEST_ERROR;
   }
 
   digits = my_itoa( num, ptr, BASE_16);   
   value = my_atoi( ptr, digits, BASE_16);
   #ifdef VERBOSE
   PRINTF("  Initial number: %d\n", num);
+	
   PRINTF("  Final Decimal number: %d\n", value);
   #endif
   free_words( (uint32_t*)ptr );
 
   if ( value != num )
   {
+		PRINTF("ERROR 2\n");
     return TEST_ERROR;
   }
   return TEST_NO_ERROR;
@@ -71,7 +74,17 @@ int8_t test_data2() {
   value = my_atoi( ptr, digits, BASE_10);
   #ifdef VERBOSE
   PRINTF("  Initial Decimal number: %d\n", num);
-  PRINTF("  Final Decimal number: %d\n", value);
+
+	/* 
+	uint8_t *temp = ptr;
+  PRINTF("  Intermediate number: ");
+	for(int i = 0; i < digits; i++){
+		PRINTF("%c", *temp);
+		temp++;
+	}PRINTF("\n");
+  */
+
+ PRINTF("  Final Decimal number: %d\n", value);
   #endif
   free_words( (uint32_t*)ptr );
 
@@ -336,8 +349,10 @@ void course1(void)
   results[6] = test_memset();
   results[7] = test_reverse();
 
+  PRINTF("--------------------------------\n");
   for ( i = 0; i < TESTCOUNT; i++) 
   {
+		if(results[i]){PRINTF("Test %d failed!\n",i+1);}
     failed += results[i];
   }
 
