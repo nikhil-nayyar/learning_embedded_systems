@@ -1,0 +1,20 @@
+Dependencies for Project 'Lab13', Target 'Lab13': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
+F (.\startup.s)(0x5701E1D8)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\RV31\INC-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\CMSIS\Include-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\INC\Luminary--pd "__UVISION_VERSION SETA 536"--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\Lab13.c)(0x62A2B14A)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I .. -I ..\..\..-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\RV31\INC-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\CMSIS\Include-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\INC\Luminary-D__UVISION_VERSION="536" -Drvmdk -DPART_LM4F120H5QR-o .\lab13.o --omf_browse .\lab13.crf --depend .\lab13.d)
+I (..//tm4c123gh6pm.h)(0x51D4A8F2)
+I (Sound.h)(0x54A15D3E)
+I (Piano.h)(0x54A15D3E)
+I (C:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\ARMCC\include\Math.h)(0x6025CC38)
+I (TExaS.h)(0x569BA38C)
+F (.\Sound.c)(0x62A24DAA)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I .. -I ..\..\..-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\RV31\INC-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\CMSIS\Include-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\INC\Luminary-D__UVISION_VERSION="536" -Drvmdk -DPART_LM4F120H5QR-o .\sound.o --omf_browse .\sound.crf --depend .\sound.d)
+I (Sound.h)(0x54A15D3E)
+I (DAC.h)(0x5321B05E)
+I (..//tm4c123gh6pm.h)(0x51D4A8F2)
+F (.\DAC.c)(0x62A24F77)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I .. -I ..\..\..-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\RV31\INC-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\CMSIS\Include-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\INC\Luminary-D__UVISION_VERSION="536" -Drvmdk -DPART_LM4F120H5QR-o .\dac.o --omf_browse .\dac.crf --depend .\dac.d)
+I (DAC.h)(0x5321B05E)
+I (..//tm4c123gh6pm.h)(0x51D4A8F2)
+F (.\Piano.c)(0x62A22572)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I .. -I ..\..\..-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\RV31\INC-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\CMSIS\Include-IC:\Users\nikhi\Documents\OperationBitflip\Keil_v5\ARM\INC\Luminary-D__UVISION_VERSION="536" -Drvmdk -DPART_LM4F120H5QR-o .\piano.o --omf_browse .\piano.crf --depend .\piano.d)
+I (Piano.h)(0x54A15D3E)
+I (..//tm4c123gh6pm.h)(0x51D4A8F2)
+F (.\texas.o)(0x56F4A500)()

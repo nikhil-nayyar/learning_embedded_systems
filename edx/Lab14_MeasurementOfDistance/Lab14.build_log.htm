@@ -1,0 +1,58 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.36.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Nikhil Nayyar, Student, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.36.0.0
+Toolchain Path:  C:\Users\nikhi\Documents\OperationBitflip\Development\Embedded\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.36.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+C:\Users\nikhi\Documents\OperationBitflip\Development\Embedded\Labware\Lab14_MeasurementOfDistance\Lab14.uvproj
+Project File Date:  06/17/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Users\nikhi\Documents\OperationBitflip\Development\Embedded\ARM\ARMCLANG\Bin'
+Build target 'Lab14'
+MeasurementOfDistance.c(34): warning: In file included from...
+./MeasurementOfDistance.h(7): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+MeasurementOfDistance.c(55): warning: implicit conversion turns floating-point number into integer: 'double' to 'unsigned long' [-Wfloat-conversion]
+  return sample*.066;  
+  ~~~~~~ ~~~~~~^~~~~
+MeasurementOfDistance.c(125): warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned char' [-Wimplicit-int-conversion]
+                        String[i] = quotient + 48;
+                                  ~ ~~~~~~~~~^~~~
+MeasurementOfDistance.c(155): warning: passing 'unsigned char [10]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                lcd_write_row1(String);         // output to Nokia5110 LCD (optional)
+                               ^~~~~~
+../fuckthis\lcd.h(77): note: passing argument to parameter 'string' here
+void lcd_write_row1(char string[]);
+                         ^
+4 warnings generated.
+compiling MeasurementOfDistance.c...
+linking...
+.\Lab14.axf: Error: L6218E: Undefined symbol Distance (referred from texas.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 1 error messages.
+".\Lab14.axf" - 1 Error(s), 4 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
