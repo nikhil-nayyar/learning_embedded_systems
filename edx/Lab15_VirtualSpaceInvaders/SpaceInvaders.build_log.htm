@@ -2,11 +2,760 @@
 <body>
 <pre>
 <h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.36.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Nikhil Nayyar, Student, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.36.0.0
+Toolchain Path:  C:\Users\nikhi\Documents\OperationBitflip\Development\Embedded\Shape the World\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.36.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
 <h2>Project:</h2>
-C:\Dropbox\apn176\apntex_176\MySetup\Labware\Lab15_VirtualSpaceInvaders\SpaceInvaders.uvproj
-Project File Date:  04/19/2014
+C:\Users\nikhi\Documents\OperationBitflip\Development\Embedded\learning_embedded_systems\edx\Lab15_VirtualSpaceInvaders\SpaceInvaders.uvproj
+Project File Date:  06/30/2022
 
 <h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Users\nikhi\Documents\OperationBitflip\Development\Embedded\Shape the World\ARM\ARMCLANG\Bin'
+Build target 'SpaceInvaders'
+TExaS.c(71): warning: no previous extern declaration for non-static variable 'NoInputMsg' [-Wmissing-variable-declarations]
+const unsigned char NoInputMsg[40] = "There is no grader for Lab 15";
+                    ^
+TExaS.c(71): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char NoInputMsg[40] = "There is no grader for Lab 15";
+      ^
+TExaS.c(72): warning: no previous extern declaration for non-static variable 'OutputPortMsg0' [-Wmissing-variable-declarations]
+const unsigned char OutputPortMsg0[40] = "Simulated Nokia5110 on PA1-0";
+                    ^
+TExaS.c(72): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char OutputPortMsg0[40] = "Simulated Nokia5110 on PA1-0";
+      ^
+TExaS.c(73): warning: no previous extern declaration for non-static variable 'OutputPortMsg1' [-Wmissing-variable-declarations]
+const unsigned char OutputPortMsg1[40] = "Real Nokia5110 on PA7-2+Scope on PA1-0";
+                    ^
+TExaS.c(73): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char OutputPortMsg1[40] = "Real Nokia5110 on PA7-2+Scope on PA1-0";
+      ^
+TExaS.c(74): warning: no previous extern declaration for non-static variable 'OutputPortMsg2' [-Wmissing-variable-declarations]
+const unsigned char OutputPortMsg2[40] = "Real Nokia5110 on PA7-2";
+                    ^
+TExaS.c(74): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char OutputPortMsg2[40] = "Real Nokia5110 on PA7-2";
+      ^
+TExaS.c(75): warning: no previous extern declaration for non-static variable 'OutputPortMsg3' [-Wmissing-variable-declarations]
+const unsigned char OutputPortMsg3[40] = "No Nokia5110, no scope";//NoLCD_NoScope
+                    ^
+TExaS.c(75): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char OutputPortMsg3[40] = "No Nokia5110, no scope";//NoLCD_NoScope
+      ^
+TExaS.c(83): warning: no previous extern declaration for non-static variable 'BlankMsg' [-Wmissing-variable-declarations]
+const unsigned char BlankMsg[40] = " ";
+                    ^
+TExaS.c(83): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char BlankMsg[40] = " ";
+      ^
+TExaS.c(84): warning: no previous extern declaration for non-static variable 'InitializedMsg' [-Wmissing-variable-declarations]
+const unsigned char InitializedMsg[40] = "TExaS is initialized for Lab 15";
+                    ^
+TExaS.c(84): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char InitializedMsg[40] = "TExaS is initialized for Lab 15";
+      ^
+TExaS.c(85): warning: no previous extern declaration for non-static variable 'IntroMsg' [-Wmissing-variable-declarations]
+const unsigned char IntroMsg[40]       = "Grading is not implemented for this lab";
+                    ^
+TExaS.c(85): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char IntroMsg[40]       = "Grading is not implemented for this lab";
+      ^
+TExaS.c(86): warning: no previous extern declaration for non-static variable 'DoneMsg' [-Wmissing-variable-declarations]
+const unsigned char DoneMsg[40]        = "Done grading";
+                    ^
+TExaS.c(86): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char DoneMsg[40]        = "Done grading";
+      ^
+TExaS.c(91): warning: no previous extern declaration for non-static variable 'TExaS_Period' [-Wmissing-variable-declarations]
+unsigned long volatile TExaS_Period=80000;       // sampling period in bus cycles
+                       ^
+TExaS.c(91): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long volatile TExaS_Period=80000;       // sampling period in bus cycles
+^
+TExaS.c(258): error: pasting formed '.ActionMsg', an invalid preprocessing token
+  OUT(ActionMsg,IntroMsg);
+  ^
+TExaS.c(87): note: expanded from macro 'OUT'
+#define OUT(PORT,MSG) TExaS. ## PORT = (unsigned long) MSG
+                             ^
+TExaS.c(54): warning: padding struct 'struct TExaS_data' with 4 bytes to align 'Course' [-Wpadded]
+  unsigned long long Course;  // 8-byte ASCII code "edX" or "EE319K"
+                     ^
+TExaS.c(58): warning: padding struct 'struct TExaS_data' with 4 bytes to align 'CopyThisToEdX' [-Wpadded]
+  unsigned long long CopyThisToEdX;    // 8 byte ASCII code
+                     ^
+TExaS.c(259): error: pasting formed '.IntroMsg', an invalid preprocessing token
+  OUT(IntroMsg,BlankMsg);
+  ^
+TExaS.c(87): note: expanded from macro 'OUT'
+#define OUT(PORT,MSG) TExaS. ## PORT = (unsigned long) MSG
+                             ^
+TExaS.c(260): error: pasting formed '.OKMsg', an invalid preprocessing token
+  OUT(OKMsg,BlankMsg);
+  ^
+TExaS.c(87): note: expanded from macro 'OUT'
+#define OUT(PORT,MSG) TExaS. ## PORT = (unsigned long) MSG
+                             ^
+TExaS.c(261): error: pasting formed '.ErrMsg', an invalid preprocessing token
+  OUT(ErrMsg,BlankMsg);
+  ^
+TExaS.c(87): note: expanded from macro 'OUT'
+#define OUT(PORT,MSG) TExaS. ## PORT = (unsigned long) MSG
+                             ^
+TExaS.c(318): error: pasting formed '.IntroMsg', an invalid preprocessing token
+  OUT(IntroMsg,InitializedMsg);
+  ^
+TExaS.c(87): note: expanded from macro 'OUT'
+#define OUT(PORT,MSG) TExaS. ## PORT = (unsigned long) MSG
+                             ^
+TExaS.c(321): warning: no previous prototype for function 'StopTimer4' [-Wmissing-prototypes]
+void StopTimer4(void){
+     ^
+TExaS.c(321): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void StopTimer4(void){
+^
+static 
+TExaS.c(325): warning: no previous prototype for function 'StartTimer4' [-Wmissing-prototypes]
+void StartTimer4(void){
+     ^
+TExaS.c(325): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void StartTimer4(void){
+^
+static 
+TExaS.c(332): warning: no previous prototype for function 'Timer4A_Handler' [-Wmissing-prototypes]
+void Timer4A_Handler(void){
+     ^
+TExaS.c(332): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Timer4A_Handler(void){
+^
+static 
+TExaS.c(338): warning: no previous prototype for function 'Timer5A_Handler' [-Wmissing-prototypes]
+void Timer5A_Handler(void){
+     ^
+TExaS.c(338): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Timer5A_Handler(void){
+^
+static 
+TExaS.c(361): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  GPIO_PORTD_DIR_R &= ~0x08;      // 2) make PD3 input
+                   ~~ ^~~~~
+TExaS.c(363): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  GPIO_PORTD_DEN_R &= ~0x08;      // 4) disable digital I/O on PD3
+                   ~~ ^~~~~
+TExaS.c(367): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  for(delay = 0; delay<20; delay++){};  // allow time for clock to stabilize
+                                     ^~
+TExaS.c(390): warning: implicit conversion changes signedness: 'char' to 'unsigned char' [-Wsign-conversion]
+    data = *sourcePt; sourcePt++;
+         ~ ^~~~~~~~~
+TExaS.c(391): warning: implicit conversion changes signedness: 'unsigned char' to 'char' [-Wsign-conversion]
+    *destPt = data; destPt++;
+            ~ ^~~~
+TExaS.c(452): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  SYSCTL_RCC_R &= ~SYSCTL_RCC_XTAL_M;   // clear XTAL field
+               ~~ ^~~~~~~~~~~~~~~~~~
+TExaS.c(454): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  SYSCTL_RCC2_R &= ~SYSCTL_RCC2_OSCSRC2_M;// clear oscillator source field
+                ~~ ^~~~~~~~~~~~~~~~~~~~~~
+TExaS.c(457): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  SYSCTL_RCC2_R &= ~SYSCTL_RCC2_PWRDN2;
+                ~~ ^~~~~~~~~~~~~~~~~~~
+TExaS.c(460): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  SYSCTL_RCC2_R = (SYSCTL_RCC2_R&~0x1FC00000) // clear system clock divider field
+                                ~^~~~~~~~~~~
+TExaS.c(463): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  while((SYSCTL_RIS_R&SYSCTL_RIS_PLLLRIS)==0){};
+                                               ^
+TExaS.c(465): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  SYSCTL_RCC2_R &= ~SYSCTL_RCC2_BYPASS2;
+                ~~ ^~~~~~~~~~~~~~~~~~~~
+TExaS.c(505): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  UART0_CTL_R &= ~UART_CTL_UARTEN;      // disable UART
+              ~~ ^~~~~~~~~~~~~~~~
+TExaS.c(510): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  UART0_CC_R &= ~UART_CC_CS_M;          // clear baud clock control field
+             ~~ ^~~~~~~~~~~~~
+TExaS.c(518): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  GPIO_PORTA_AMSEL_R &= ~0x03;          // disable analog functionality on PA
+                     ~~ ^~~~~
+TExaS.c(64): warning: no previous extern declaration for non-static variable 'TExaS' [-Wmissing-variable-declarations]
+TEXAS_DATA TExaS; // in RAM, communication both directions on DLL
+           ^
+TExaS.c(64): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+TEXAS_DATA TExaS; // in RAM, communication both directions on DLL
+^
+TExaS.c(69): warning: no previous extern declaration for non-static variable 'TExaS_Ports' [-Wmissing-variable-declarations]
+PORT_DATA TExaS_Ports;        // in RAM, set by user in DLL
+          ^
+TExaS.c(69): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+PORT_DATA TExaS_Ports;        // in RAM, set by user in DLL
+^
+TExaS.c(70): warning: no previous extern declaration for non-static variable 'Display' [-Wmissing-variable-declarations]
+enum DisplayType Display;// value is not relevant
+                 ^
+TExaS.c(70): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+enum DisplayType Display;// value is not relevant
+^
+TExaS.c(80): warning: no previous extern declaration for non-static variable 'TExaS_Meter' [-Wmissing-variable-declarations]
+METER_DATA TExaS_Meter; // in RAM, seen on DLL
+           ^
+TExaS.c(80): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+METER_DATA TExaS_Meter; // in RAM, seen on DLL
+^
+TExaS.c(90): warning: no previous extern declaration for non-static variable 'ADCnum' [-Wmissing-variable-declarations]
+unsigned long ADCnum;
+              ^
+TExaS.c(90): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long ADCnum;
+^
+TExaS.c(92): warning: no previous extern declaration for non-static variable 'LastMode' [-Wmissing-variable-declarations]
+unsigned long LastMode;  // start grading when Mode bit 0 goes from 0 to 1
+              ^
+TExaS.c(92): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long LastMode;  // start grading when Mode bit 0 goes from 0 to 1
+^
+TExaS.c(93): warning: no previous extern declaration for non-static variable 'bFlag' [-Wmissing-variable-declarations]
+long     bFlag;          // true at first interrupt of a test
+         ^
+TExaS.c(93): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+long     bFlag;          // true at first interrupt of a test
+^
+TExaS.c(94): warning: no previous extern declaration for non-static variable 'Count' [-Wmissing-variable-declarations]
+unsigned long volatile Count; // goes from TimeCount to 0, how many interrupts to look
+                       ^
+TExaS.c(94): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long volatile Count; // goes from TimeCount to 0, how many interrupts to look
+^
+TExaS.c(95): warning: no previous extern declaration for non-static variable 'DelayBetweenTests' [-Wmissing-variable-declarations]
+unsigned long volatile DelayBetweenTests;
+                       ^
+TExaS.c(95): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long volatile DelayBetweenTests;
+^
+TExaS.c(96): warning: no previous extern declaration for non-static variable 'TExaS_Test' [-Wmissing-variable-declarations]
+unsigned long TExaS_Test;     // increments during grading
+              ^
+TExaS.c(96): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long TExaS_Test;     // increments during grading
+^
+TExaS.c(97): warning: no previous extern declaration for non-static variable 'ScopeMode' [-Wmissing-variable-declarations]
+unsigned long ScopeMode;  // true if implementing scope
+              ^
+TExaS.c(97): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long ScopeMode;  // true if implementing scope
+^
+TExaS.c(98): warning: no previous extern declaration for non-static variable 'ScopeCount' [-Wmissing-variable-declarations]
+unsigned long ScopeCount; // one buffer is 512 points
+              ^
+TExaS.c(98): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long ScopeCount; // one buffer is 512 points
+^
+42 warnings and 5 errors generated.
+compiling TExaS.c...
+VirtualNokia5110.c(235): warning: no previous prototype for function 'RxFifo_Init' [-Wmissing-prototypes]
+AddIndexFifo(Rx, RXFIFOSIZE, char, FIFOSUCCESS, FIFOFAIL)
+^
+VirtualNokia5110.c(107): note: expanded from macro 'AddIndexFifo'
+void NAME ## Fifo_Init(void){ long sr;  \
+     ^
+<scratch space>(5): note: expanded from here
+RxFifo_Init
+^
+VirtualNokia5110.c(235): note: declare 'static' if the function is not intended to be used outside of this translation unit
+VirtualNokia5110.c(106): note: expanded from macro 'AddIndexFifo'
+TYPE static NAME ## Fifo [SIZE];        \
+                                        ^
+VirtualNokia5110.c(235): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+AddIndexFifo(Rx, RXFIFOSIZE, char, FIFOSUCCESS, FIFOFAIL)
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+VirtualNokia5110.c(113): note: expanded from macro 'AddIndexFifo'
+  if(( NAME ## PutI - NAME ## GetI ) & ~(SIZE-1)){  \
+                                     ~ ^~~~~~~~~
+VirtualNokia5110.c(235): error: pasting formed 'RxPutI++', an invalid preprocessing token
+VirtualNokia5110.c(117): note: expanded from macro 'AddIndexFifo'
+  NAME ## PutI ## ++;  \
+               ^
+VirtualNokia5110.c(235): warning: no previous prototype for function 'RxFifo_Put' [-Wmissing-prototypes]
+VirtualNokia5110.c(112): note: expanded from macro 'AddIndexFifo'
+int NAME ## Fifo_Put (TYPE data){       \
+    ^
+<scratch space>(8): note: expanded from here
+RxFifo_Put
+^
+VirtualNokia5110.c(235): note: declare 'static' if the function is not intended to be used outside of this translation unit
+VirtualNokia5110.c(111): note: expanded from macro 'AddIndexFifo'
+}                                       \
+                                        ^
+VirtualNokia5110.c(235): error: pasting formed 'RxGetI++', an invalid preprocessing token
+AddIndexFifo(Rx, RXFIFOSIZE, char, FIFOSUCCESS, FIFOFAIL)
+^
+VirtualNokia5110.c(125): note: expanded from macro 'AddIndexFifo'
+  NAME ## GetI ## ++;  \
+               ^
+VirtualNokia5110.c(235): warning: no previous prototype for function 'RxFifo_Get' [-Wmissing-prototypes]
+VirtualNokia5110.c(120): note: expanded from macro 'AddIndexFifo'
+int NAME ## Fifo_Get (TYPE *datapt){  \
+    ^
+<scratch space>(15): note: expanded from here
+RxFifo_Get
+^
+VirtualNokia5110.c(235): note: declare 'static' if the function is not intended to be used outside of this translation unit
+VirtualNokia5110.c(119): note: expanded from macro 'AddIndexFifo'
+}                      \
+                       ^
+VirtualNokia5110.c(235): warning: no previous prototype for function 'RxFifo_Size' [-Wmissing-prototypes]
+AddIndexFifo(Rx, RXFIFOSIZE, char, FIFOSUCCESS, FIFOFAIL)
+^
+VirtualNokia5110.c(128): note: expanded from macro 'AddIndexFifo'
+unsigned short NAME ## Fifo_Size (void){  \
+               ^
+<scratch space>(22): note: expanded from here
+RxFifo_Size
+^
+VirtualNokia5110.c(235): note: declare 'static' if the function is not intended to be used outside of this translation unit
+VirtualNokia5110.c(127): note: expanded from macro 'AddIndexFifo'
+}                      \
+                       ^
+VirtualNokia5110.c(236): warning: no previous prototype for function 'TxFifo_Init' [-Wmissing-prototypes]
+AddIndexFifo(Tx, TXFIFOSIZE, char, FIFOSUCCESS, FIFOFAIL)
+^
+VirtualNokia5110.c(107): note: expanded from macro 'AddIndexFifo'
+void NAME ## Fifo_Init(void){ long sr;  \
+     ^
+<scratch space>(28): note: expanded from here
+TxFifo_Init
+^
+VirtualNokia5110.c(236): note: declare 'static' if the function is not intended to be used outside of this translation unit
+VirtualNokia5110.c(106): note: expanded from macro 'AddIndexFifo'
+TYPE static NAME ## Fifo [SIZE];        \
+                                        ^
+VirtualNokia5110.c(236): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+AddIndexFifo(Tx, TXFIFOSIZE, char, FIFOSUCCESS, FIFOFAIL)
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+VirtualNokia5110.c(113): note: expanded from macro 'AddIndexFifo'
+  if(( NAME ## PutI - NAME ## GetI ) & ~(SIZE-1)){  \
+                                     ~ ^~~~~~~~~
+VirtualNokia5110.c(236): error: pasting formed 'TxPutI++', an invalid preprocessing token
+VirtualNokia5110.c(117): note: expanded from macro 'AddIndexFifo'
+  NAME ## PutI ## ++;  \
+               ^
+VirtualNokia5110.c(236): warning: no previous prototype for function 'TxFifo_Put' [-Wmissing-prototypes]
+VirtualNokia5110.c(112): note: expanded from macro 'AddIndexFifo'
+int NAME ## Fifo_Put (TYPE data){       \
+    ^
+<scratch space>(31): note: expanded from here
+TxFifo_Put
+^
+VirtualNokia5110.c(236): note: declare 'static' if the function is not intended to be used outside of this translation unit
+VirtualNokia5110.c(111): note: expanded from macro 'AddIndexFifo'
+}                                       \
+                                        ^
+VirtualNokia5110.c(236): error: pasting formed 'TxGetI++', an invalid preprocessing token
+AddIndexFifo(Tx, TXFIFOSIZE, char, FIFOSUCCESS, FIFOFAIL)
+^
+VirtualNokia5110.c(125): note: expanded from macro 'AddIndexFifo'
+  NAME ## GetI ## ++;  \
+               ^
+VirtualNokia5110.c(236): warning: no previous prototype for function 'TxFifo_Get' [-Wmissing-prototypes]
+VirtualNokia5110.c(120): note: expanded from macro 'AddIndexFifo'
+int NAME ## Fifo_Get (TYPE *datapt){  \
+    ^
+<scratch space>(38): note: expanded from here
+TxFifo_Get
+^
+VirtualNokia5110.c(236): note: declare 'static' if the function is not intended to be used outside of this translation unit
+VirtualNokia5110.c(119): note: expanded from macro 'AddIndexFifo'
+}                      \
+                       ^
+VirtualNokia5110.c(236): warning: no previous prototype for function 'TxFifo_Size' [-Wmissing-prototypes]
+AddIndexFifo(Tx, TXFIFOSIZE, char, FIFOSUCCESS, FIFOFAIL)
+^
+VirtualNokia5110.c(128): note: expanded from macro 'AddIndexFifo'
+unsigned short NAME ## Fifo_Size (void){  \
+               ^
+<scratch space>(45): note: expanded from here
+TxFifo_Size
+^
+VirtualNokia5110.c(236): note: declare 'static' if the function is not intended to be used outside of this translation unit
+VirtualNokia5110.c(127): note: expanded from macro 'AddIndexFifo'
+}                      \
+                       ^
+VirtualNokia5110.c(245): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  UART0_CTL_R &= ~UART_CTL_UARTEN;      // disable UART
+              ~~ ^~~~~~~~~~~~~~~~
+VirtualNokia5110.c(250): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  UART0_IFLS_R &= ~0x3F;                // clear TX and RX interrupt FIFO level fields
+               ~~ ^~~~~
+VirtualNokia5110.c(240): warning: no previous prototype for function 'UART_Init' [-Wmissing-prototypes]
+void UART_Init(void){
+     ^
+VirtualNokia5110.c(240): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void UART_Init(void){
+^
+static 
+VirtualNokia5110.c(271): warning: implicit conversion loses integer precision: 'volatile unsigned long' to 'char' [-Wimplicit-int-conversion]
+    letter = UART0_DR_R;
+           ~ ^~~~~~~~~~
+VirtualNokia5110.c(189): note: expanded from macro 'UART0_DR_R'
+#define UART0_DR_R              (*((volatile unsigned long *)0x4000C000))
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+VirtualNokia5110.c(281): warning: implicit conversion changes signedness: 'char' to 'unsigned long' [-Wsign-conversion]
+    UART0_DR_R = letter;
+               ~ ^~~~~~
+VirtualNokia5110.c(288): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  while(RxFifo_Get(&letter) == FIFOFAIL){};
+                                          ^
+VirtualNokia5110.c(289): warning: implicit conversion changes signedness: 'char' to 'unsigned char' [-Wsign-conversion]
+  return(letter);
+  ~~~~~~ ^~~~~~
+VirtualNokia5110.c(286): warning: no previous prototype for function 'UART_InChar' [-Wmissing-prototypes]
+unsigned char UART_InChar(void){
+              ^
+VirtualNokia5110.c(286): note: declare 'static' if the function is not intended to be used outside of this translation unit
+unsigned char UART_InChar(void){
+^
+static 
+VirtualNokia5110.c(294): warning: implicit conversion changes signedness: 'unsigned char' to 'char' [-Wsign-conversion]
+  while(TxFifo_Put(data) == FIFOFAIL){};
+        ~~~~~~~~~~ ^~~~
+VirtualNokia5110.c(294): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  while(TxFifo_Put(data) == FIFOFAIL){};
+                                       ^
+VirtualNokia5110.c(295): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  UART0_IM_R &= ~UART_IM_TXIM;          // disable TX FIFO interrupt
+             ~~ ^~~~~~~~~~~~~
+VirtualNokia5110.c(293): warning: no previous prototype for function 'UART_OutChar' [-Wmissing-prototypes]
+void UART_OutChar(unsigned char data){
+     ^
+VirtualNokia5110.c(293): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void UART_OutChar(unsigned char data){
+^
+static 
+VirtualNokia5110.c(309): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+      UART0_IM_R &= ~UART_IM_TXIM;      // disable TX FIFO interrupt
+                 ~~ ^~~~~~~~~~~~~
+VirtualNokia5110.c(303): warning: no previous prototype for function 'UART0_Handler' [-Wmissing-prototypes]
+void UART0_Handler(void){
+     ^
+VirtualNokia5110.c(303): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void UART0_Handler(void){
+^
+static 
+VirtualNokia5110.c(409): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+    Nokia5110_OutChar(n+'0'); /* n is between 0 and 9 */
+    ~~~~~~~~~~~~~~~~~ ~^~~~
+VirtualNokia5110.c(412): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+    Nokia5110_OutChar(n/10+'0'); /* tens digit */
+    ~~~~~~~~~~~~~~~~~ ~~~~^~~~
+VirtualNokia5110.c(416): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+    Nokia5110_OutChar(n/100+'0'); /* hundreds digit */
+    ~~~~~~~~~~~~~~~~~ ~~~~~^~~~
+VirtualNokia5110.c(418): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+    Nokia5110_OutChar(n/10+'0'); /* tens digit */
+    ~~~~~~~~~~~~~~~~~ ~~~~^~~~
+VirtualNokia5110.c(425): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+    Nokia5110_OutChar(n/100+'0'); /* hundreds digit */
+    ~~~~~~~~~~~~~~~~~ ~~~~~^~~~
+VirtualNokia5110.c(427): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+    Nokia5110_OutChar(n/10+'0'); /* tens digit */
+    ~~~~~~~~~~~~~~~~~ ~~~~^~~~
+VirtualNokia5110.c(435): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+    Nokia5110_OutChar(n/100+'0'); /* hundreds digit */
+    ~~~~~~~~~~~~~~~~~ ~~~~~^~~~
+VirtualNokia5110.c(437): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+    Nokia5110_OutChar(n/10+'0'); /* tens digit */
+    ~~~~~~~~~~~~~~~~~ ~~~~^~~~
+VirtualNokia5110.c(457): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  UART_OutChar((newY<<4)|newX); 
+  ~~~~~~~~~~~~ ~~~~~~~~~^~~~~
+VirtualNokia5110.c(481): warning: implicit conversion changes signedness: 'const char' to 'unsigned char' [-Wsign-conversion]
+    UART_OutChar(ptr[i]);
+    ~~~~~~~~~~~~ ^~~~~~
+VirtualNokia5110.c(527): warning: implicit conversion loses integer precision: 'long' to 'unsigned char' [-Wimplicit-int-conversion]
+      UART_OutChar(m);      
+      ~~~~~~~~~~~~ ^
+VirtualNokia5110.c(538): warning: cast from 'const unsigned char *' to 'unsigned char *' drops const qualifier [-Wcast-qual]
+  BMPtable[m] = (unsigned char *)ptr; // log it in table
+                                 ^
+VirtualNokia5110.c(558): warning: implicit conversion loses integer precision: 'long' to 'unsigned char' [-Wimplicit-int-conversion]
+  UART_OutChar(m);      
+  ~~~~~~~~~~~~ ^
+VirtualNokia5110.c(560): warning: implicit conversion loses integer precision: 'long' to 'unsigned char' [-Wimplicit-int-conversion]
+  UART_OutChar(s/4);  // size in words
+  ~~~~~~~~~~~~ ~^~
+VirtualNokia5110.c(565): warning: implicit conversion loses integer precision: 'long' to 'unsigned char' [-Wimplicit-int-conversion]
+  UART_OutChar(m);      
+  ~~~~~~~~~~~~ ^
+VirtualNokia5110.c(235): warning: no previous extern declaration for non-static variable 'RxPutI' [-Wmissing-variable-declarations]
+AddIndexFifo(Rx, RXFIFOSIZE, char, FIFOSUCCESS, FIFOFAIL)
+^
+VirtualNokia5110.c(104): note: expanded from macro 'AddIndexFifo'
+unsigned long volatile NAME ## PutI;    \
+                       ^
+<scratch space>(2): note: expanded from here
+RxPutI
+^
+VirtualNokia5110.c(235): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+VirtualNokia5110.c(103): note: expanded from macro 'AddIndexFifo'
+#define AddIndexFifo(NAME,SIZE,TYPE,SUCCESS,FAIL) \
+                                                  ^
+VirtualNokia5110.c(235): warning: no previous extern declaration for non-static variable 'RxGetI' [-Wmissing-variable-declarations]
+AddIndexFifo(Rx, RXFIFOSIZE, char, FIFOSUCCESS, FIFOFAIL)
+^
+VirtualNokia5110.c(105): note: expanded from macro 'AddIndexFifo'
+unsigned long volatile NAME ## GetI;    \
+                       ^
+<scratch space>(3): note: expanded from here
+RxGetI
+^
+VirtualNokia5110.c(235): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+VirtualNokia5110.c(104): note: expanded from macro 'AddIndexFifo'
+unsigned long volatile NAME ## PutI;    \
+                                        ^
+VirtualNokia5110.c(236): warning: no previous extern declaration for non-static variable 'TxPutI' [-Wmissing-variable-declarations]
+AddIndexFifo(Tx, TXFIFOSIZE, char, FIFOSUCCESS, FIFOFAIL)
+^
+VirtualNokia5110.c(104): note: expanded from macro 'AddIndexFifo'
+unsigned long volatile NAME ## PutI;    \
+                       ^
+<scratch space>(25): note: expanded from here
+TxPutI
+^
+VirtualNokia5110.c(236): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+VirtualNokia5110.c(103): note: expanded from macro 'AddIndexFifo'
+#define AddIndexFifo(NAME,SIZE,TYPE,SUCCESS,FAIL) \
+                                                  ^
+VirtualNokia5110.c(236): warning: no previous extern declaration for non-static variable 'TxGetI' [-Wmissing-variable-declarations]
+AddIndexFifo(Tx, TXFIFOSIZE, char, FIFOSUCCESS, FIFOFAIL)
+^
+VirtualNokia5110.c(105): note: expanded from macro 'AddIndexFifo'
+unsigned long volatile NAME ## GetI;    \
+                       ^
+<scratch space>(26): note: expanded from here
+TxGetI
+^
+VirtualNokia5110.c(236): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+VirtualNokia5110.c(104): note: expanded from macro 'AddIndexFifo'
+unsigned long volatile NAME ## PutI;    \
+                                        ^
+VirtualNokia5110.c(350): warning: no previous extern declaration for non-static variable 'BMPtable' [-Wmissing-variable-declarations]
+unsigned char *BMPtable[256]; // zero means unused, a pointer means this BMP has been previously sent
+               ^
+VirtualNokia5110.c(350): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned char *BMPtable[256]; // zero means unused, a pointer means this BMP has been previously sent
+^
+44 warnings and 4 errors generated.
+compiling VirtualNokia5110.c...
+SpaceInvaders.c(71): warning: no previous extern declaration for non-static variable 'SmallEnemy30PointA' [-Wmissing-variable-declarations]
+const unsigned char SmallEnemy30PointA[] = {
+                    ^
+SpaceInvaders.c(71): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char SmallEnemy30PointA[] = {
+      ^
+SpaceInvaders.c(82): warning: no previous extern declaration for non-static variable 'SmallEnemy30PointB' [-Wmissing-variable-declarations]
+const unsigned char SmallEnemy30PointB[] = {
+                    ^
+SpaceInvaders.c(82): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char SmallEnemy30PointB[] = {
+      ^
+SpaceInvaders.c(93): warning: no previous extern declaration for non-static variable 'SmallEnemy20PointA' [-Wmissing-variable-declarations]
+const unsigned char SmallEnemy20PointA[] = {
+                    ^
+SpaceInvaders.c(93): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char SmallEnemy20PointA[] = {
+      ^
+SpaceInvaders.c(104): warning: no previous extern declaration for non-static variable 'SmallEnemy20PointB' [-Wmissing-variable-declarations]
+const unsigned char SmallEnemy20PointB[] = {
+                    ^
+SpaceInvaders.c(104): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char SmallEnemy20PointB[] = {
+      ^
+SpaceInvaders.c(115): warning: no previous extern declaration for non-static variable 'SmallEnemy10PointA' [-Wmissing-variable-declarations]
+const unsigned char SmallEnemy10PointA[] = {
+                    ^
+SpaceInvaders.c(115): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char SmallEnemy10PointA[] = {
+      ^
+SpaceInvaders.c(126): warning: no previous extern declaration for non-static variable 'SmallEnemy10PointB' [-Wmissing-variable-declarations]
+const unsigned char SmallEnemy10PointB[] = {
+                    ^
+SpaceInvaders.c(126): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char SmallEnemy10PointB[] = {
+      ^
+SpaceInvaders.c(138): warning: no previous extern declaration for non-static variable 'PlayerShip0' [-Wmissing-variable-declarations]
+const unsigned char PlayerShip0[] = {
+                    ^
+SpaceInvaders.c(138): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char PlayerShip0[] = {
+      ^
+SpaceInvaders.c(150): warning: no previous extern declaration for non-static variable 'SmallEnemyBonus0' [-Wmissing-variable-declarations]
+const unsigned char SmallEnemyBonus0[] = {
+                    ^
+SpaceInvaders.c(150): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char SmallEnemyBonus0[] = {
+      ^
+SpaceInvaders.c(161): warning: no previous extern declaration for non-static variable 'Bunker0' [-Wmissing-variable-declarations]
+const unsigned char Bunker0[] = {
+                    ^
+SpaceInvaders.c(161): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char Bunker0[] = {
+      ^
+SpaceInvaders.c(171): warning: no previous extern declaration for non-static variable 'Bunker1' [-Wmissing-variable-declarations]
+const unsigned char Bunker1[] = {
+                    ^
+SpaceInvaders.c(171): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char Bunker1[] = {
+      ^
+SpaceInvaders.c(181): warning: no previous extern declaration for non-static variable 'Bunker2' [-Wmissing-variable-declarations]
+const unsigned char Bunker2[] = {
+                    ^
+SpaceInvaders.c(181): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char Bunker2[] = {
+      ^
+SpaceInvaders.c(191): warning: no previous extern declaration for non-static variable 'Bunker3' [-Wmissing-variable-declarations]
+const unsigned char Bunker3[] = {
+                    ^
+SpaceInvaders.c(191): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char Bunker3[] = {
+      ^
+SpaceInvaders.c(201): warning: no previous extern declaration for non-static variable 'BigExplosion0' [-Wmissing-variable-declarations]
+const unsigned char BigExplosion0[] = {
+                    ^
+SpaceInvaders.c(201): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char BigExplosion0[] = {
+      ^
+SpaceInvaders.c(212): warning: no previous extern declaration for non-static variable 'BigExplosion1' [-Wmissing-variable-declarations]
+const unsigned char BigExplosion1[] = {
+                    ^
+SpaceInvaders.c(212): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char BigExplosion1[] = {
+      ^
+SpaceInvaders.c(223): warning: no previous extern declaration for non-static variable 'SmallExplosion0' [-Wmissing-variable-declarations]
+const unsigned char SmallExplosion0[] = {
+                    ^
+SpaceInvaders.c(223): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char SmallExplosion0[] = {
+      ^
+SpaceInvaders.c(234): warning: no previous extern declaration for non-static variable 'SmallExplosion1' [-Wmissing-variable-declarations]
+const unsigned char SmallExplosion1[] = {
+                    ^
+SpaceInvaders.c(234): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char SmallExplosion1[] = {
+      ^
+SpaceInvaders.c(246): warning: no previous extern declaration for non-static variable 'Missile0' [-Wmissing-variable-declarations]
+const unsigned char Missile0[] = {
+                    ^
+SpaceInvaders.c(246): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char Missile0[] = {
+      ^
+SpaceInvaders.c(256): warning: no previous extern declaration for non-static variable 'Missile1' [-Wmissing-variable-declarations]
+const unsigned char Missile1[] = {
+                    ^
+SpaceInvaders.c(256): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char Missile1[] = {
+      ^
+SpaceInvaders.c(265): warning: no previous extern declaration for non-static variable 'Missile2' [-Wmissing-variable-declarations]
+const unsigned char Missile2[] = {
+                    ^
+SpaceInvaders.c(265): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char Missile2[] = {
+      ^
+SpaceInvaders.c(275): warning: no previous extern declaration for non-static variable 'Laser0' [-Wmissing-variable-declarations]
+const unsigned char Laser0[] = {
+                    ^
+SpaceInvaders.c(275): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char Laser0[] = {
+      ^
+SpaceInvaders.c(284): warning: no previous extern declaration for non-static variable 'Laser1' [-Wmissing-variable-declarations]
+const unsigned char Laser1[] = {
+                    ^
+SpaceInvaders.c(284): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned char Laser1[] = {
+      ^
+SpaceInvaders.c(319): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+    Enemy[i].x = 20*i;
+               ~ ~~^~
+SpaceInvaders.c(317): warning: no previous prototype for function 'Init' [-Wmissing-prototypes]
+void Init(void){ int i;
+     ^
+SpaceInvaders.c(317): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Init(void){ int i;
+^
+static 
+SpaceInvaders.c(326): warning: no previous prototype for function 'Move' [-Wmissing-prototypes]
+void Move(void){ int i;
+     ^
+SpaceInvaders.c(326): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Move(void){ int i;
+^
+static 
+SpaceInvaders.c(335): warning: no previous extern declaration for non-static variable 'FrameCount' [-Wmissing-variable-declarations]
+unsigned long FrameCount=0;
+              ^
+SpaceInvaders.c(335): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long FrameCount=0;
+^
+SpaceInvaders.c(340): warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned char' [-Wimplicit-int-conversion]
+     Nokia5110_PrintBMP(Enemy[i].x, Enemy[i].y, Enemy[i].image[FrameCount], 0);
+     ~~~~~~~~~~~~~~~~~~             ~~~~~~~~~^
+SpaceInvaders.c(340): warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned char' [-Wimplicit-int-conversion]
+     Nokia5110_PrintBMP(Enemy[i].x, Enemy[i].y, Enemy[i].image[FrameCount], 0);
+     ~~~~~~~~~~~~~~~~~~ ~~~~~~~~~^
+SpaceInvaders.c(336): warning: no previous prototype for function 'Draw' [-Wmissing-prototypes]
+void Draw(void){ int i;
+     ^
+SpaceInvaders.c(336): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Draw(void){ int i;
+^
+static 
+SpaceInvaders.c(372): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+    while(Semaphore == 0){};
+                           ^
+SpaceInvaders.c(416): warning: no previous prototype for function 'Timer2A_Handler' [-Wmissing-prototypes]
+void Timer2A_Handler(void){ 
+     ^
+SpaceInvaders.c(416): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Timer2A_Handler(void){ 
+^
+static 
+SpaceInvaders.c(64): warning: no previous extern declaration for non-static variable 'TimerCount' [-Wmissing-variable-declarations]
+unsigned long TimerCount;
+              ^
+SpaceInvaders.c(64): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long TimerCount;
+^
+SpaceInvaders.c(65): warning: no previous extern declaration for non-static variable 'Semaphore' [-Wmissing-variable-declarations]
+unsigned long Semaphore;
+              ^
+SpaceInvaders.c(65): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned long Semaphore;
+^
+SpaceInvaders.c(316): warning: no previous extern declaration for non-static variable 'Enemy' [-Wmissing-variable-declarations]
+STyp Enemy[4];
+     ^
+SpaceInvaders.c(316): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+STyp Enemy[4];
+^
+33 warnings generated.
+compiling SpaceInvaders.c...
+".\SpaceInvaders.axf" - 9 Error(s), 119 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>
